@@ -7,12 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Player.create([
-  {name: "QuarantineQueen5000"},
-  {name: "SalStaysHome"},
-  {name: "Alice"}
-])
+# Player.create([
+#   {name: "QuarantineQueen5000"},
+#   {name: "SalStaysHome"},
+#   {name: "Alice"}
+# ])
 
-# alice = Player.create(name: "Alice")
-# sal = Player.create(name: "SalStaysHome")
-# queen = Player.create(name: "QuarantineQueen5000")
+Game.create([
+  {player_id: 1, score: 100},
+  {player_id: 2, score: 1200},
+  {player_id: 3, score: 500}
+]);
+
+alice = Player.create(name: "Alice")
+sal = Player.create(name: "SalStaysHome")
+queen = Player.create(name: "QuarantineQueen5000")
