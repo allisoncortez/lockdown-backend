@@ -6,10 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Game.create([{ score: 1200 }, { player_id: 1 }])
-Game.create([{ score: 1600 }, { player_id: 2 }])
-Game.create([{ score: 500 }, { player_id: 3 }])
+
+Player.destroy_all
+Game.destroy_all
+
+# Game.create([{ score: 1200 }, { player_id: 1 }])
+# Game.create([{ score: 1600 }, { player_id: 2 }])
+# Game.create([{ score: 500 }, { player_id: 3 }])
 
 alice = Player.create(name: "Alice")
 sal = Player.create(name: "SalStaysHome")
-queen = Player.create(name: "QuarantineQueen5000"
+queen = Player.create(name: "QuarantineQueen5000")
+
+Game.create([
+    {player_id: 1, score: 1200},
+    {player_id: 2, score: 1800},
+    {player_id: 3, score: 500}
+  ]);
