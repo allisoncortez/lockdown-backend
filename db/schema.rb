@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_06_01_213406) do
 
   create_table "games", force: :cascade do |t|
     t.integer "score"
-    t.bigint "player_id"
+    t.bigint "player_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["player_id"], name: "index_games_on_player_id"

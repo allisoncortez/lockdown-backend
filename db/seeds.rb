@@ -10,9 +10,6 @@
 Player.destroy_all
 Game.destroy_all
 
-# Game.create([{ score: 1200 }, { player_id: 1 }])
-# Game.create([{ score: 1600 }, { player_id: 2 }])
-# Game.create([{ score: 500 }, { player_id: 3 }])
 
 alice = Player.create(name: "Alice")
 sal = Player.create(name: "SalStaysHome")

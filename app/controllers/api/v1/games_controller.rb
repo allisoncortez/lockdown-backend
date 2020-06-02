@@ -3,4 +3,5 @@ class Api::V1::GamesController < ApplicationController
         games = Game.all 
         render json: games
     end
+
 end
