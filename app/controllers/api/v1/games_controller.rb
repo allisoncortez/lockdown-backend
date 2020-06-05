@@ -1,11 +1,10 @@
 class Api::V1::GamesController < ApplicationController
-    def index
+    def index #GET /games
         games = Game.all 
-        # render json: games
         render json: GameSerializer.new(games)
     end
 
-    def create
+    def create #POST /games
         player = Player.find_or_create_by(name: params[:player_name])
         game = Game.new(player: player, score: params[:score])
         if game.save
