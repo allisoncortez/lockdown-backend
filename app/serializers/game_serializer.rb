@@ -1,4 +1,5 @@
 class GameSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :score, :player_id, :player
+  attributes :score, :player
+  # took out player_id
 end
