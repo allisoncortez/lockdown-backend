@@ -6,4 +6,7 @@ Rails.application.routes.draw do
       resources :players, only: [:index, :create]
     end
   end
+
+  get 'api/v1/scores/top', to: 'api/v1/games#top_score'
+  get 'api/v1/scores/topfive', to: 'api/v1/games#top_scores'
 end

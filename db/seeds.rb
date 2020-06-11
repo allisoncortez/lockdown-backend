@@ -14,9 +14,13 @@ Game.destroy_all
 alice = Player.create(name: "Alice")
 sal = Player.create(name: "SalStaysHome")
 queen = Player.create(name: "QuarantineQueen5000")
+viki = Player.create(name: "Viki3000")
+david = Player.create(name: "davidC")
 
 Game.create([
     {player_id: 1, score: 1200},
     {player_id: 2, score: 1800},
-    {player_id: 3, score: 500}
+    {player_id: 3, score: 500},
+    {player_id: 3, score: 2000},
+    {player_id: 3, score: 780}
   ]);

@@ -15,4 +15,14 @@ class Api::V1::GamesController < ApplicationController
         end
     end
 
+    def top_score
+        top_score = Game.top_score()
+        render json: top_score, status: 200
+      end
+    
+      def top_scores
+        top_five = Game.top_scores()
+        render json: top_five, include: [:player], status: 200
+      end
+
 end
