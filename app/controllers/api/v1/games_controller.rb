@@ -15,6 +15,24 @@ class Api::V1::GamesController < ApplicationController
         end
     end
 
+    def show 
+        # player = Player.find_by(id: params[:id])
+        game = Game.find_by(id: params[:id])
+        render json: GameSerializer.new(game)
+    end
+
+    def update #PATCH
+        # binding.pry
+        player = Player.find_by(id: params[:id])
+        game = Game.find_by(id: params[:id])
+
+        if game 
+            render json: game, include: [:player], status:200
+        else
+            render json: {errors: game.errors.full_messages}, status: :unprocessible_entity
+        end
+    end
+
     def top_score
         top_score = Game.top_score()
         render json: top_score, status: 200
