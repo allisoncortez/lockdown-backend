@@ -23,11 +23,11 @@ class Api::V1::GamesController < ApplicationController
 
     def update #PATCH
         # binding.pry
-        player = Player.find_by(id: params[:id])
+        # player = Player.find_by(id: params[:id])
         game = Game.find_by(id: params[:id])
 
-        if game 
-            render json: game, include: [:player], status:200
+        if game.update(game_params)
+            render json: game, status:200
         else
             render json: {errors: game.errors.full_messages}, status: :unprocessible_entity
         end
@@ -41,6 +41,12 @@ class Api::V1::GamesController < ApplicationController
       def top_scores
         top_five = Game.top_scores()
         render json: top_five, include: [:player], status: 200
+      end
+
+      private 
+
+      def game_params
+        params.require(:game).permit(:score)
       end
 
 end
