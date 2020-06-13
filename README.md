@@ -1,24 +1,47 @@
-# README
+# LOCKDOWN-backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+2D browser-based video game, based off of my quarantine 2020 experience.
 
-Things you may want to cover:
 
-* Ruby version
+## Installation
 
-* System dependencies
+To get this game up and running, you'll need to fork and clone this repo, along with the [LOCKDOWN-frontend](https://github.com/allisoncortez/lockdown-frontend).
 
-* Configuration
+You'll need to have PostgreSQL and Rails installed.
+* Run your PostgreSQL server for the DB.
+* Run the rails server from the LOCKDOWN-backend.
+* Once the Rails server is running, you can open the index.html file,[from the frontend](https://github.com/allisoncortez/lockdown-frontend) , on your browser.
 
-* Database creation
+You'll need to cd into the project directory and run ``bundle install``. All the gem dependancies will then be installed.
 
-* Database initialization
+## Database Creation
+Navigate to the LOCKDOWN-backend folder and run the following:
 
-* How to run the test suite
+* rails db:create
+* rails db:migrate
+* rails db:seed
 
-* Services (job queues, cache servers, search engines, etc.)
+## Running Tests
 
-* Deployment instructions
+In the terminal, please run ``rails s``. It will open up a local server address where you can route to that address and look at the project. It will look something like this:
 
-* ...
+> http://127.0.0.1:9494/
+
+
+## Dependencies 
+
+ * [Rails](https://guides.rubyonrails.org/) - backend API
+ * [PostgreSQL](https://www.postgresql.org/) - database
+
+## Contributing
+
+Bug reports and pull requests are welcome. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+
+
+## Authors
+
+[Allison Cortez](https://github.com/allisoncortez)
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
