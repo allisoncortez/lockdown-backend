@@ -1,8 +1,8 @@
 class Api::V1::GamesController < ApplicationController
-    def index
-        games = Game.all 
-        render json: GameSerializer.new(games)
-    end
+    # def index
+    #     games = Game.all 
+    #     render json: GameSerializer.new(games)
+    # end
 
     def create
         player = Player.find_or_create_by(name: params[:player_name])
@@ -15,10 +15,10 @@ class Api::V1::GamesController < ApplicationController
         end
     end
 
-    def show 
-        game = Game.find_by(id: params[:id])
-        render json: GameSerializer.new(game)
-    end
+    # def show 
+    #     game = Game.find_by(id: params[:id])
+    #     render json: GameSerializer.new(game)
+    # end
 
     def update 
         game = Game.find_by(id: params[:id])
