@@ -1,10 +1,10 @@
 class Api::V1::GamesController < ApplicationController
-    def index #GET /games
+    def index
         games = Game.all 
         render json: GameSerializer.new(games)
     end
 
-    def create #POST /games
+    def create
         player = Player.find_or_create_by(name: params[:player_name])
         game = Game.new(player: player, score: params[:score])
         if game.save
@@ -16,14 +16,11 @@ class Api::V1::GamesController < ApplicationController
     end
 
     def show 
-        # player = Player.find_by(id: params[:id])
         game = Game.find_by(id: params[:id])
         render json: GameSerializer.new(game)
     end
 
-    def update #PATCH
-        # binding.pry
-        # player = Player.find_by(id: params[:id])
+    def update 
         game = Game.find_by(id: params[:id])
 
         if game.update(game_params)
